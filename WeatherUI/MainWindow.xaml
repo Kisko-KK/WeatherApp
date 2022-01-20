@@ -1,0 +1,143 @@
+﻿<Window x:Class="WeatherUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherUI"
+        mc:Ignorable="d"
+        Height="450" Width="735"  FontFamily="Rockwell"
+         ResizeMode="NoResize" Icon="Images/iconWeather.png"
+        Title="Weather App">
+
+  
+
+    <Border Background="AliceBlue">
+        <!--Grid definition-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+
+            <!-- Input and Error message-->
+            <TextBox x:Name="InputCityName" Width="150" Height="30"
+                     Grid.Column="1" Grid.Row="2" 
+                     FontSize="19" Padding="7,2,0,0" Margin="10,5,1,2"/>
+            
+            <Label x:Name="ErrorMessage" Grid.Column="1"  Grid.Row="3" Content="" 
+                 Visibility="Hidden" Foreground="Red"/>
+            
+            <Button Content="Search" Width="75"  
+                    Grid.Column="2" Grid.Row="2" Click="Button_Click" Margin="10,7,10,3"/>
+            
+            <Label x:Name="Label" Grid.Column="4"  Grid.Row="2" />
+
+
+
+            <!-- CURRENT WEATHER BOX -->
+            
+            <!--Current Weather Label-->
+            <Label Content="Current Weather"
+                   TextBlock.FontSize="25" 
+                   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+            <!--Time and City Label-->
+            <Label x:Name="LabelTime" Margin="10,0,0,0"
+                   Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"
+                   Content="CityName Hours"/>
+
+
+            <!--Icon for current weather-->
+            <Image x:Name="IconCurrentWeather" Source="https://openweathermap.org/img/w/01d.png"
+                   Grid.Row="4" Grid.Column="5" Stretch="None"/>
+
+
+            <!--Temperature label-->
+            <Label x:Name="LabelTemperature" Margin="10,0,0,0" 
+                   Grid.ColumnSpan="2" Content="0°C" Grid.Row="4" Grid.Column="4"
+                   VerticalAlignment="Center" FontSize="30"/>
+
+            <!--Feels like Label-->
+            <Label x:Name="LabelFeelsLike" Margin="10,5,0,10" FontSize="13"
+                   Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="4" 
+                   Content="FEELS LIKE: 0°C"/>
+
+
+            <!--Humidity Labels-->
+            <Label  Content="HUMIDITY" Width="80"  
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Grid.Row="6" Grid.Column="4"/>
+
+
+            <Label x:Name="LabelHumidity" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   Content="0%" Grid.Row="7" Grid.Column="4"/>
+
+
+            <!--Wind Labels-->
+            <Label  Content="WIND" Width="80"  VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Grid.Row="6" Grid.Column="5"/>
+
+            <Label x:Name="LabelWind" VerticalAlignment="Center"  HorizontalAlignment="Center"
+                   Content="0 km/h" Grid.Row="7" Grid.Column="5"/>
+
+
+            <!--Visibility Labels-->
+            <Label  Content="VISIBILITY" Width="80"
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Grid.Row="6" Grid.Column="6"/>
+
+            <Label x:Name="LabelVisibility" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Content="0 km" Grid.Row="7" Grid.Column="6"/>
+
+
+            <!--Pressure Labels-->
+            <Label  Content="PRESSURE" Width="80"  VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Grid.Row="6" Grid.Column="7"/>
+
+            <Label x:Name="LabelPresure" VerticalAlignment="Center" Padding="-10,0,0,0" 
+                   HorizontalAlignment="Center" Content="0 bm" 
+                   Grid.Row="7" Grid.Column="7"/>
+
+
+
+            <!-- 4 day Forecast -->
+            <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2"
+                   Content="4 DAY FORECAST" FontSize="24" Padding="17,0,10,10" />
+
+            <StackPanel x:Name="panel" Orientation="Horizontal" 
+                        Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="8" 
+                        HorizontalAlignment="Center"/>
+
+            <Border BorderThickness="3" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="6"
+                    BorderBrush="#7ebcf2"  CornerRadius="10" Margin="-3"/>
+
+        </Grid>
+    </Border>
+</Window>

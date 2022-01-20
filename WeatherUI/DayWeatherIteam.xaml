@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WeatherUI.DayWeatherIteam"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WeatherUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="150">
+
+
+    <Border Width="150" Margin="4,25,4,0" CornerRadius="20" Background="#8ecaff">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="icon" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2"/>
+        <Label x:Name="date" FontSize="13" Padding="7,0,0,0" Grid.ColumnSpan="2" Grid.Column="2"  Grid.Row="2" Content="Mondey"/>
+        
+        <Label x:Name="maxTemp"  FontSize="16" Grid.Column="3"  Grid.Row="3" Content="0"/>
+        <Label x:Name="minTemp"  FontSize="16" Grid.Column="3"  Grid.Row="4" Content="0"/>
+        
+        </Grid>
+    </Border>
+</UserControl>
